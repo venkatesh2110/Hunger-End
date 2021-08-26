@@ -1,0 +1,20 @@
+<div class="tableValues">
+  <h2 class="row">{{name}}</h2>
+  <h4 class="row">{{about}}</h4>
+  <h5 class="row">{{location}}</h5>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+              <th >Dish</th>
+              <th>Price:</th>
+            </tr>
+          </thead>
+         <tbody >
+           <tr *ngFor="let item of itemArray">
+            <td>{{item.foodName}}</td>
+            <td>{{item.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button mat-raised-button class="quickView" (click)='backTorestuarants()'>Back To Restaurants</button>
+</div>

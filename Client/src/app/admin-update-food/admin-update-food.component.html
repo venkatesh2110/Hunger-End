@@ -1,0 +1,60 @@
+<div class="restuarantForm tableValues m-3 p-3">
+    <h2>Update Restaurant</h2>
+    <form *ngIf="!addMoreItems"[formGroup]='itemUpdateForm'>
+      <div class="row">
+        <mat-form-field class="col-sm-5">
+            <mat-label>Restaurant Name:</mat-label>
+            <input matInput type="text" required  placeholder="Enter Restaurant Name" formControlName='name'>
+        </mat-form-field>
+      </div>
+      <div formArrayName="Items">
+        <div class="row" *ngFor="let control of itemsArray.controls;let i=index" [formGroupName]="i">
+          <mat-form-field class="col-sm-5">
+            <mat-label>Food Name:</mat-label>          
+            <input matInput type="text" placeholder="Enter Food Name" formControlName='foodName'>
+          </mat-form-field>
+          <mat-form-field class="col-sm-5" >
+            <mat-label>Price:</mat-label>
+            <input matInput type="number" required  placeholder="Enter Price" formControlName='price'>
+          </mat-form-field>
+        </div>  
+      </div>
+      <button mat-raised-button class="quickView mb-3" (click)='updateItems()' >Update Items</button>
+    </form>
+
+    <form *ngIf='addMoreItems' [formGroup]='updateRestuarants'>
+      <!-- <div class="row">
+        <mat-form-field class="col-sm-8" hidden>
+            <mat-label>Restaurant Name:</mat-label>
+            <input matInput type="text"  required  placeholder="Enter Restaurant Name" formControlName='name'>
+        </mat-form-field>
+      </div> -->
+      <div class="tableValues m-3 p-3 col-sm-8">
+        <table class="row table table-hover table-bordered col-sm-8 p-3" formArrayName="Items">
+            <tr>
+              <th colspan="2">Add Items:</th>
+              <th><button type="button" (click)="addQuantity()"  class="btn btn-success">Add More</button></th>
+            </tr>
+            <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+              <td>
+                <mat-form-field class="col-sm-5">
+                    <mat-label>Food:</mat-label>
+                    <input matInput type="text" required  placeholder="Enter Food Name" formControlName='foodName'>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="col-sm-5">
+                    <mat-label>Price:</mat-label>
+                    <input matInput type="number" required  placeholder="Enter Price Name" formControlName='price'>
+                </mat-form-field>
+              </td>
+              <td>
+                  <button (click)="removeQuantity(i)" class="btn btn-warning">Remove</button>
+              </td>
+            </tr>
+        </table>
+         <button mat-raised-button class='quickView' (click)='newUpdatedItems()' >Update Items</button>
+      </div>
+    </form>
+    <button mat-raised-button class="mt-5 quickView" [disabled]='addMoreItems' (click)='addMoreitems()'>Add More Items</button>
+</div>

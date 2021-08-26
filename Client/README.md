@@ -1,0 +1,5 @@
+# SwiggyClone
+
+---
+    permalink :/index.html
+---

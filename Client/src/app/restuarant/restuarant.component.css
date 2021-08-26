@@ -1,0 +1,53 @@
+.navbar{
+    justify-content: space-between;
+}
+
+.navbar1{
+    /* justify-content: space-between; */
+    width: 85%;
+    margin-left: 7%;
+    margin-top: 5%;
+}
+
+/* .imageSide{
+    width: 105%;
+    height: 100%;
+
+    background-image: url("./../../assets/Images/Loginbg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+.restuarant{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    
+}
+
+.restuarants{
+    width: 100%;
+    margin-left: 7%;
+    margin-top: 2%;
+}
+
+.buttonGroup{
+    margin-top: 3%;
+    margin-left:5%;
+    margin-right: 5%;
+    font-size: large;
+}
+
+.quickView:hover{
+    background-color: green;
+    color:yellow;
+}
+
+.bgImage{
+    width: 100%;
+    background-image: url('./../../assets/Images/background-light.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

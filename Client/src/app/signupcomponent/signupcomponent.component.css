@@ -1,0 +1,32 @@
+.signupItems{
+    margin-left: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+#logintoAccBtn{
+    padding: 5%;
+    margin-top: 5%;
+    color: orange;
+}
+
+#dosaImage{
+    margin-left: 20%;
+}
+
+.signUpNumber{  
+    font-size: 15px;
+}
+
+.signUpName,.signUpEmailId,.signUpPassword {
+    font-size: 15px;
+}
+
+#signUpButton{
+    background-color: orange;
+    height: 50px;
+    margin-bottom: 1%;
+}

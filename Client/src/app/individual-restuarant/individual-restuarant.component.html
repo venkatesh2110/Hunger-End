@@ -1,0 +1,48 @@
+<mat-toolbar class="navbar">
+    <div>
+        <h2>Hunger End</h2>
+    </div>
+    <div class="toolbar">
+       
+        <span>
+            <button mat-button class="quickView" (click)='redirectTocart()'><i class="fa fa-shopping-bag"></i>Cart</button>
+        </span>
+        <span>
+            <button mat-button class="quickView" (click)='authService.logOutuser()'><i class="fa fa-user" ></i>Log Out</button>
+        </span>
+    </div>
+</mat-toolbar>
+<div class="bgImage">
+    <div class="tableValues">
+        <h1 style="color: white;">{{name}}</h1>
+        <h2 style="color: white;">{{location}}</h2>    
+        <table class="table table-striped table-success table-bordered">
+            <thead>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Count</th>
+                <th>Amount</th>
+            </thead>
+            <tbody  *ngFor="let item of itemArray">
+                <td >{{item.foodName}}</td>
+                <td >{{item.price}}</td>
+                <td ><button mat-raised-button [disabled]='!item.count'  (click)='decrementQuantity(item)'>-</button> {{item.count}} <button mat-raised-button (click)='incrementQuantity(item)'>+</button></td>
+                <td >{{item.amount}}</td>
+            </tbody>
+        </table>
+        <h2 style="color: white;">Cart Details</h2>
+        <table class ="col-sm-6 table table-striped table-bordered table-warning"> 
+            <thead>
+                <th>No.Of.Items</th>
+                <th>Total Amount</th>    
+            </thead>
+            <tbody>
+                <td>{{count}}</td>
+                <td>{{totalAmount}}</td>
+            </tbody>
+        </table>
+        
+        <button mat-raised-button class="quickView" [disabled]='!count'  (click)='addTocart()'>Add To Cart</button>
+    </div>
+    
+</div>

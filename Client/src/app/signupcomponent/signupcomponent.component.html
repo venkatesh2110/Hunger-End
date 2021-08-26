@@ -1,0 +1,55 @@
+<mat-dialog-actions style="float:right !important"><button mat-button mat-dialog-close >X</button></mat-dialog-actions>
+<h2 mat-dialog-title>SIGN UP </h2>
+<mat-dialog-content>
+    <div class="signupItems">
+        <div style="display:flex">
+            <div>
+                <p><b>Already have an account?</b> <a mat-button id="logintoAccBtn" mat-dialog-close (click)='openLogindialog()'>Log In to our account</a></p>
+            </div>
+            <div>
+                <img src="assets/Images/ghee-roast.jpg" width="30%" alt="Food" id="dosaImage">
+            </div>
+        </div>
+        <form [formGroup]='signupForm'>
+            <div class="row">
+                <mat-form-field class="col-sm-4 signUpNumber">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput type="tel" placeholder="Enter Phone Number" formControlName='phoneNumber' required>
+                    <mat-error *ngIf="signupDetails.phoneNumber.errors?.required && signupDetails.phoneNumber.touched " style="color: red;">This Field is Required</mat-error>
+                    <mat-error *ngIf="signupDetails.phoneNumber.errors?.pattern && signupDetails.phoneNumber.touched" style="color: red;">Enter Valid Phone Number</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field class="col-sm-4 signUpName">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" placeholder="Enter Name" formControlName='name' required>
+                    <mat-error *ngIf="signupDetails.name.errors?.required && signupDetails.name.touched " style="color: red;">This Field is Required</mat-error>
+                    <mat-error *ngIf="signupDetails.name.errors?.pattern && signupDetails.name.touched" style="color: red;">Enter Valid Format</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field class="col-sm-4 signUpEmailId">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" placeholder="Enter Email Address" formControlName='emailId'required>
+                    <mat-error *ngIf="signupDetails.emailId.errors?.required && signupDetails.emailId.touched " style="color: red;">This Field is Required</mat-error>
+                    <mat-error *ngIf="signupDetails.emailId.errors?.email && signupDetails.emailId.touched" style="color: red;">Enter Valid Email Id</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field class="col-sm-4 signUpPassword">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" placeholder="Enter Password" formControlName='password'required>
+                    <mat-error *ngIf="signupDetails.password.errors?.required && signupDetails.password.touched " style="color: red;">This Field is Required</mat-error>
+                    <mat-error *ngIf="signupDetails.password.errors?.pattern && signupDetails.password.touched" style="color: red;">There Should be 8 to 15 characters</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <button class="col-sm-4" mat-raised-button id="signUpButton"   (click)='openSignupSnackbar("SignUp Successfull")'>SIGN UP</button>
+            </div>  
+        </form>      
+    </div>
+</mat-dialog-content>

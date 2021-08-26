@@ -1,0 +1,47 @@
+<div class="bgImage">
+    <mat-toolbar class="navbar">
+        <div>
+            <h2>Hunger End</h2>
+        </div>
+        <div class="toolbar">     
+            <span>
+                <button mat-button class="quickView" (click)='redirectTocart()'><i class="fa fa-shopping-bag"></i>Cart</button>
+            </span>
+            <span>
+                <button mat-button class="quickView" (click)='authService.logOutuser()'><i class="fa fa-user" ></i>Log Out</button>
+            </span>
+        </div>
+    </mat-toolbar>
+    <div>
+    <div class="restuarant">
+        <h1 style="text-align: center; font-size: 30px;">RESTAURANTS</h1>
+        <mat-divider></mat-divider>
+    </div>
+    <div class="row col-lg-11" >
+        <div class="col-lg-12">
+            <div class="restuarants row">
+                <mat-card class="col-lg-3 m-5 cardMargin" *ngFor="let item of itemArray">
+                    <mat-card-header>
+                        <mat-card-title>{{item.name}}</mat-card-title>
+                        <mat-card-subtitle>{{item.location}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="./../../assets/Images/food.jpg"
+                        alt="Restuarant">
+                    <mat-card-content>
+                        <p>
+                           {{item.about}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button class="quickView" (click)='individualRestuarant(item)'>Quick View</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+        <!-- <div class="col-lg-4">
+            <div class="imageSide">
+                <p>Hi</p>
+            </div>
+        </div>     -->
+    </div>    
+</div>

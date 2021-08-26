@@ -1,0 +1,37 @@
+
+
+.loginItems{
+    /* margin-top: 5%; */
+    margin-left: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+#createAccBtn{
+    padding: 5%;
+    margin-top: 5%;
+    color: orange;
+}
+
+#dosaImage{
+    margin-left: 20%;
+}
+
+.loginEmailId{ 
+    margin-left: 5%;
+    font-size: 15px;
+}
+
+.loginPassword{
+    margin-left: 5%;
+    font-size: 15px;
+}
+
+#loginButton{
+    background-color: orange;
+    height: 50px;
+    margin-left: 5%;
+}

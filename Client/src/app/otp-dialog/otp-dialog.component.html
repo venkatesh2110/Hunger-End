@@ -1,0 +1,24 @@
+<mat-dialog-actions style="float: right;"><button mat-button mat-dialog-close>X</button></mat-dialog-actions>
+<h2 mat-dialog-title>OTP Validation</h2>
+
+<mat-dialog-content>
+    <div *ngIf="valueEntered">
+        <p>Enter Email Address to send OTP</p>
+        <form [formGroup]='otpForm'>
+            <mat-form-field class="col-sm-4">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" required  placeholder="Enter Email Address" formControlName='emailId' required>
+            </mat-form-field>
+        </form>
+        <button mat-raised-button  class="quickView" (click)='otpGeneration()'>Send</button>
+    </div>
+    <div *ngIf="!valueEntered">
+        <form [formGroup]='otpValidationForm'>
+            <mat-form-field>
+                <input matInput type="number" placeholder="Enter OTP" formControlName='otpValue'  required>
+            </mat-form-field>        
+            <button mat-raised-button  class="quickView" (click)='validateOtp()'>Submit</button>
+        </form>
+        
+    </div>
+</mat-dialog-content>

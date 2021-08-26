@@ -1,0 +1,31 @@
+.bgImage{
+    width: 100%;
+    height: 100%;
+    background-image: url('./../../assets/Images/individual.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.navbar{
+    justify-content: space-between;
+}
+
+.quickView:hover{
+    background-color: green;
+    color:white;
+}
+
+.tableValues{
+    width: 80%;
+    margin-left: 5%;
+}
+
+h1,h2{
+    /* color: white; */
+    padding-top: 2%;
+}
+
+.quickView:hover{
+    background-color:green;
+    color: yellow;
+}

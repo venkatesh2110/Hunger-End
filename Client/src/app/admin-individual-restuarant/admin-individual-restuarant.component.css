@@ -1,0 +1,17 @@
+.tableValues{
+    margin: 2%;
+}
+
+h2{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+table{
+    width: 70%;
+}
+
+.quickView:hover{
+    background-color: green;
+    color:yellow
+}

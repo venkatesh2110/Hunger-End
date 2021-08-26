@@ -1,0 +1,50 @@
+<div class="restuarantForm">
+    <h2>Add Restaurant</h2>
+    <form [formGroup]='addRestuarants'>
+        
+        <div class="row">
+            <mat-form-field class="col-sm-8">
+                <mat-label>Restaurant Name:</mat-label>
+                <input matInput type="text" required  placeholder="Enter Restaurant Name" formControlName='name'>
+            </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="col-sm-8">
+              <mat-label>About Restaurant:</mat-label>
+              <input matInput type="text" required  placeholder="About Restaurant" formControlName='about'>
+          </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-8">
+            <mat-label>Location:</mat-label>
+            <input matInput type="text" required  placeholder="Enter Location" formControlName='location'>
+        </mat-form-field>
+    </div>
+        <table class="row table table-bordered col-sm-8" formArrayName="Items">
+            <tr>
+              <th colspan="2">Add Items:</th>
+              <th><button type="button" (click)="addQuantity()" class="btn btn-success">Add More</button></th>
+            </tr>
+            <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+              <td>
+                <mat-form-field class="col-sm-8">
+                    <mat-label>Food:</mat-label>
+                    <input matInput type="text" required  placeholder="Enter Food Name" formControlName='foodName'>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="col-sm-8">
+                    <mat-label>Price:</mat-label>
+                    <input matInput type="number" required  placeholder="Enter Price Name" formControlName='price'>
+                </mat-form-field>
+              </td>
+              <td>
+                  <button (click)="removeQuantity(i)" class="btn btn-warning">Remove</button>
+              </td>
+            </tr>
+          </table>
+         <button mat-raised-button class="quickView" (click)='addItems()'>Add Items</button>
+        
+    </form>
+    <button mat-raised-button class="quickView mt-4" (click)='backTorestaurants()'>Back To Restaurants</button>
+</div>

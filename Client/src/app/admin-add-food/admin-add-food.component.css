@@ -1,0 +1,14 @@
+.restuarantForm{
+    width: 70%;
+    margin-top: 5%;
+    margin-left:20%;
+}
+
+.fileUpload{
+    margin: 2%;
+}
+
+.quickView:hover{
+    background-color: green;
+    color: yellow;
+}

@@ -1,0 +1,35 @@
+.adminLogin{
+    width: 99%;
+    height: 100%;
+    background-image: url('./../../assets/Images/Admin-logo.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 10%;
+}
+
+h1{
+    margin-left: 5%;
+}
+
+.loginEmailId{ 
+    font-size: 15px;
+}
+
+.loginPassword{
+    font-size: 15px;
+}
+
+.adminForm{
+    width: 40%;
+    background-color: white;
+    margin-left: 20%;
+    padding: 5%;    
+}
+
+#signUpButton{
+    background-color: orange;
+    height: 40px;
+    margin-top: 3%;
+    margin-left: 20px;
+}
